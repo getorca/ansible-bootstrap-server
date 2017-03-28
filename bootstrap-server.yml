@@ -1,0 +1,36 @@
+---
+- hosts: '{{ host }}'
+  remote_user: root
+
+  tasks:
+
+  - name: Fix for Ubuntu 16.04 LTS that doesn't come with certain modules required by ansible
+    raw: apt-get install python-minimal aptitude -y
+
+  - name: Update and upgrade apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: Set the hostname
+    hostname:
+      name: '{{ hostname }}'
+
+  - name: set timzone to UTC
+    timezone:
+      name: Etc/UTC
+
+  - name: install NTP to sync time
+    apt:
+      name: ntp
+      state: latest
+
+  - name: UFW allow OpenSSH
+    ufw:
+      rule: allow
+      name: OpenSSH
+
+  - name: Enable UFW
+    ufw:
+      state: enabled
