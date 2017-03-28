@@ -1,5 +1,5 @@
 # ansible-initial-deploy
-An ansible playbook to run some common and initial server setup commands.  Designed for Ubuntu 16.04.
+An ansible playbook to run some common and initial server setup commands.  Designed for Ubuntu 16.04 on DigitalOcean, Linide, etc.
 
 # What the script does
 - apt-get update && upgrade
