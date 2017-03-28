@@ -11,6 +11,6 @@ An ansible playbook to run some common and initial server setup commands.  Desig
 # How to use the script
 - have ansible installed
 - have an inventory file
-- if running only this script, run it on one server at a time, alternatively conditions will need to be set for mulitple hostnames
+- if running only this script, run it on one server at a time, alternatively assign host variables in the inventory file
 - run the script, ansible-playbook initial-server-setup.yml --extra-vars "hosename=hostname
 
