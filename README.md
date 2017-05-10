@@ -12,5 +12,4 @@ An ansible playbook to bootsrap a Ubuntu 16.04LTS server.  It runs some common a
 # How to use the script
 - have ansible installed and configured
 - have an inventory file with a hostname var set for each host
-- run the script, ansible-playbook bootstrap-server.yml --extra-vars "host=host"
-
+- run the script, ansible-playbook bootstrap-server.yml --extra-vars "host=YOUR_HOST_OR_GROUP_FROM_INVENTORY_FILE"
